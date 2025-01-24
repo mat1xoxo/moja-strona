@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Pierwsza Strona</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9e1e1;
+            color: #5b4b3a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #f28d87;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background-color: #f28d87;
+            color: white;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+        .btn:hover {
+            background-color: #f25947;
+        }
+        .hidden {
+            display: none;
+        }
+        .heart {
+            font-size: 60px;
+            color: #f25947;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .clown {
+            font-size: 80px;
+            margin-top: 20px;
+        }
+        .text-block {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="heart">❤️</div>
+            <h1>Hej Zuzia, mam małe pytanko?</h1>
+        </header>
+
+        <main>
+            <section>
+                <h2>Zostaniesz moją walentynką?</h2>
+                <p>Wybierz mądrze:</p>
+                <button class="btn" onclick="showAnswer('tak')">Tak</button>
+                <button class="btn" onclick="showAnswer('nie')">Nie</button>
+            </section>
+
+            <!-- Sekcja z odpowiedzią 'Tak' -->
+            <section id="tak" class="hidden">
+                <h2>Wow, nie spodziewałem się, a w sumie to się spodziewałem!</h2>
+                <div class="text-block">
+                    <p>Dziękuję, że jesteś i za zaufanie</p>
+                    <p>Kocham Cię!</p>
+                </div>
+                <img src="https://www.emojimeaning.com/img/img-apple-160/1f48d.png" alt="Pierścionek">
+            </section>
+
+            <!-- Sekcja z odpowiedzią 'Nie' -->
+            <section id="nie" class="hidden">
+                <h2>Co ty kurwa wybrałaś za odpowiedź?!</h2>
+                <div class="text-block">
+                    <p>Oddaj pieniądze</p>
+                    <p>Czy ty jesteś normalna?</p>
+                </div>
+                <div class="clown">🤡</div>
+            </section>
+
+            <!-- Sekcja PS -->
+            <section id="ps" class="hidden">
+                <h2>PS:</h2>
+                <p>To moja pierwsza styczność z tworzeniem stron internetowych, ale postaram się, aby kolejne były lepsze. Twój BALLMANN <3 Kocham Cię!</p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function showAnswer(answer) {
+            // Ukryj sekcje z odpowiedziami
+            document.getElementById('tak').classList.add('hidden');
+            document.getElementById('nie').classList.add('hidden');
+
+            // Pokaż odpowiednią sekcję
+            if (answer === 'tak') {
+                document.getElementById('tak').classList.remove('hidden');
+            } else if (answer === 'nie') {
+                document.getElementById('nie').classList.remove('hidden');
+            }
+
+            // Pokaż sekcję PS
+            document.getElementById('ps').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
